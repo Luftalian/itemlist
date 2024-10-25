@@ -1,8 +1,30 @@
 # ItemList
-ItemList is a Python library that allows you to select and search items from the command line. It offers flexible UI options, search functionality, and a cancel option.
+**ItemList** provides a tool for selecting and executing functions in a CLI environment. It offers an intuitive interface for managing and executing multiple workflows or tasks efficiently.
+
+#### **1. Simple Decorator-Based Integration**
+- Functions can be added to the menu simply by using the **@item decorator**. It requires minimal changes to existing functions to integrate them into the CLI menu.
+
+  **Example Code**:
+  ```python
+  @item # only this!
+  def func_1():
+      print("func_1 is executing...")
+
+  @item
+  def func_2(description="Perform another important task"):
+      print("func_2 is executing...")
+  ```
 
 ![itemlist](https://github.com/user-attachments/assets/2a3ec397-ef90-4d44-a9df-c4a6b571cb6c)
 
+#### **2. Intuitive CLI Interface**
+- Utilizing the **curses** library, users can navigate through options smoothly with arrow keys or `j`/`k`. The currently selected item is displayed in bold for better visibility.
+
+#### **3. Efficient Search Functionality**
+- The menu includes a **search bar**, allowing users to filter options by function name or description. This makes it easy to quickly find the desired function, even among numerous options.
+
+#### **4. Function Registration with Descriptions**
+- Each function can be registered with an optional **description**. This allows users to easily understand the purpose or details of each task, reducing the chance of incorrect selections.
 
 ## Installation
 
