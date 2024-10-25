@@ -22,7 +22,7 @@ if __name__ == '__main__':
     selected_name, selected_func, selected_func_description = selected
 
     if selected_func == item._cancel:
-        print("キャンセルが選択されました。プログラムを終了します。")
+        print("Cancel selected. Exiting the program.")
     else:
         print(f"Running: {selected_name}\n")
         print(f"Description: {selected_func_description}\n")

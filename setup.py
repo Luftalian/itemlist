@@ -1,11 +1,17 @@
+import sys
 from setuptools import setup, find_packages
+
+install_requires = []
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
+if sys.platform.startswith('win'):
+    install_requires.append('windows-curses')
+
 setup(
-    name="itemlist",  # PyPI上でのパッケージ名
-    version="0.1.0",
+    name="itemlist",
+    version="0.1.1",
     author="Haruki Nakajima",
     author_email="your.email@example.com",
     description="A CLI item selection and search library",
@@ -20,7 +26,6 @@ setup(
     ],
     python_requires='>=3.7',
     install_requires=[
-        'curses>=3.2.1',
         'Sphinx>=3.2.1',
         'sphinx-autodoc-typehints>=1.11.0',
     ],

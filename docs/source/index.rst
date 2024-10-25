@@ -1,4 +1,3 @@
-# docs/index.rst
 Welcome to ItemList's documentation!
 ====================================
 
@@ -7,6 +6,7 @@ Welcome to ItemList's documentation!
    :caption: Contents:
 
    modules
+   examples
 
 Indices and tables
 ==================
@@ -14,3 +14,4 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+

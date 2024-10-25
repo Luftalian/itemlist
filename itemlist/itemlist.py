@@ -1,20 +1,36 @@
 import curses
 
 class Item:
+    """
+    The Item class manages CLI menu items.
+    """
+
     def __init__(self):
+        """Initialize the Item class."""
         self.items = []
         self.cancel_option = ("Cancel", self._cancel, "Cancel and exit")
 
     def __call__(self, func):
-        # 関数の名前、関数自体、および説明をアイテムリストに追加
+        """
+        Decorator to add functions to the item list.
+
+        Args:
+            func (function): The function to register.
+
+        Returns:
+            function: The original function.
+        """
+        # Add the function name, the function itself, and the description to the item list
         description = func.__defaults__[0] if func.__defaults__ else ""
         self.items.append((func.__name__, func, description))
-        return func  # デコレーターとして機能させるためにfuncを返す
+        return func  # Return func to make it work as a decorator
 
     def select(self):
+        """Display the CLI menu and return the selected item."""
         return self._cli_select()
 
     def _cli_select(self):
+        """Internal method to display the CLI menu using curses."""
         def menu(stdscr):
             curses.curs_set(0)
             selected_index = 0
@@ -25,15 +41,15 @@ class Item:
                 stdscr.clear()
                 height, width = stdscr.getmaxyx()
 
-                # 検索バーの表示
+                # Display the search bar
                 search_prompt = "Search: " + search_query
                 stdscr.addstr(0, 0, search_prompt, curses.A_UNDERLINE)
 
-                # フィルタリングされたアイテムの取得
+                # Get the filtered items
                 filtered_items = self._filter_items(search_query, all_items)
 
-                # 表示するアイテムの調整（最大表示可能行数に基づく）
-                display_items = filtered_items[:height - 2]  # 検索バーと余白を考慮
+                # Adjust the items to be displayed (based on the maximum number of displayable rows)
+                display_items = filtered_items[:height - 2]  # Consider the search bar and margin
                 for idx, (name, _, description) in enumerate(display_items):
                     if idx == selected_index:
                         stdscr.addstr(idx + 1, 0, f"> {name}: {description}", curses.A_BOLD)
@@ -52,7 +68,7 @@ class Item:
                 elif key in [curses.KEY_ENTER, ord("\n")]:
                     if display_items:
                         return display_items[selected_index]
-                elif key == 27:  # ESCキーでキャンセル
+                elif key == 27:  # Cancel with ESC key
                     return self.cancel_option
                 elif 32 <= key <= 126:  # Printable characters
                     search_query += chr(key)
@@ -63,16 +79,19 @@ class Item:
         return curses.wrapper(menu)
 
     def _filter_items(self, query, items):
+        """Internal method to filter items based on a query."""
         if not query:
             return items
         query_lower = query.lower()
         return [item for item in items if query_lower in item[0].lower() or query_lower in item[2].lower()]
 
     def _cancel(self):
-        # キャンセル時の処理（必要に応じて拡張可能）
+        """Handle cancellation."""
+        # Processing when canceled (can be extended as needed)
         pass
 
     def endwin(self):
+        """End the curses window."""
         curses.endwin()
 
 item = Item()

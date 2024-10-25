@@ -17,7 +17,7 @@ class TestItem(unittest.TestCase):
     def test_cancel_option(self):
         cancel = self.item.cancel_option
         self.assertEqual(cancel[0], "Cancel")
-        self.assertEqual(cancel[2], "キャンセルして終了します")
+        self.assertEqual(cancel[2], "Cancel and exit")
 
 if __name__ == '__main__':
     unittest.main()
