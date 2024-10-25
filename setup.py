@@ -11,7 +11,7 @@ if sys.platform.startswith('win'):
 
 setup(
     name="itemlist",
-    version="0.1.2",
+    version="0.1.3",
     author="Haruki Nakajima",
     author_email="your.email@example.com",
     description="A CLI item selection and search library",
