@@ -9,6 +9,8 @@ pip install itemlist
 
 ## Usage
 
+More details can be found in the [examples](./examples) directory.
+
 ```python
 from itemlist import item
 
@@ -38,6 +40,6 @@ if __name__ == '__main__':
         selected_func()
 ```
 
-## ライセンス
+## License
 
-MIT License
+[MIT License](./LICENSE)
