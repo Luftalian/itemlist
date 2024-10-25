@@ -1,6 +1,9 @@
 # ItemList
 ItemList is a Python library that allows you to select and search items from the command line. It offers flexible UI options, search functionality, and a cancel option.
 
+![itemlist](https://github.com/user-attachments/assets/2a3ec397-ef90-4d44-a9df-c4a6b571cb6c)
+
+
 ## Installation
 
 ```bash
