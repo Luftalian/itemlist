@@ -12,7 +12,7 @@ pip install itemlist
 
 ## Usage
 
-More details can be found in the [examples](./examples) directory.
+More details can be found in the [examples](https://github.com/Luftalian/itemlist/tree/main/examples) directory.
 
 ```python
 from itemlist import item
@@ -45,4 +45,4 @@ if __name__ == '__main__':
 
 ## License
 
-[MIT License](./LICENSE)
+[MIT License](https://github.com/Luftalian/itemlist/blob/main/LICENSE)
