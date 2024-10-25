@@ -7,12 +7,12 @@
   **Example Code**:
   ```python
   @item # only this!
-  def func_1():
-      print("func_1 is executing...")
+  def flow_runner():
+      print("Flow 1 is running...")
 
   @item
-  def func_2(description="Perform another important task"):
-      print("func_2 is executing...")
+  def flow2_runner():
+      print("Flow 2 is running...")
   ```
 
 ![itemlist](https://github.com/user-attachments/assets/2a3ec397-ef90-4d44-a9df-c4a6b571cb6c)
