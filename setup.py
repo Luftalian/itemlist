@@ -11,10 +11,10 @@ if sys.platform.startswith('win'):
 
 setup(
     name="itemlist",
-    version="0.1.4",
+    version="0.1.5",
     author="Haruki Nakajima",
     author_email="your.email@example.com",
-    description="A CLI item selection and search library",
+    description="CLI tool for selecting and executing functions.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/Luftalian/itemlist",
